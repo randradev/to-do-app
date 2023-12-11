@@ -4,6 +4,7 @@ import { TodoCounter } from './todocounter';
 import { TodoSearch } from './todosearch';
 import { TodoList } from './todolist';
 import { TodoItem } from './todoitem';
+import { CreateTodoButton } from './createtodobutton';
 
 
 function App() {
@@ -19,7 +20,7 @@ function App() {
         <TodoItem />
       </TodoList>
 
-      {/* <CreateTodoButton /> */}
+      <CreateTodoButton />
 
     </div>
   );
