@@ -1,0 +1,32 @@
+.main-body-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  margin: 20px 0;
+  flex-wrap: wrap;
+}
+
+.columna-izquierda-main {
+  flex: 1;
+  box-sizing: border-box;
+  padding: 0 10px;
+  max-width: 48%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 25%; /* Ajusta el margen izquierdo y derecho al 25% del ancho total de la pantalla */
+}
+
+/* Estilos específicos para pantallas más pequeñas */
+@media only screen and (max-width: 600px) {
+  .main-body-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .columna-izquierda-main,
+  .columna-derecha-main {
+    max-width: 100%;
+    margin: 10px 0;
+  }
+}

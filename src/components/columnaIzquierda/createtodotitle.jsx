@@ -1,6 +1,8 @@
+import '../columnaIzquierda.css'
+
 function CreateToDoTitle() {
     return(
-        <h2>
+        <h2 className='CreateToDoTitle'>
             Crea una nueva tarea
         </h2>
     );

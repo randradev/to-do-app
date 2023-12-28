@@ -5,7 +5,7 @@ import { CreateToDoTitle } from "./columnaIzquierda/createtodotitle";
 
 function ColumnaIzquierda(){
     return(
-        <div>
+        <div className="container-columna-izquierda">
             <CreateToDoTitle />
             <CreateToDoForm />
             <CreateTodoButton />

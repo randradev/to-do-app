@@ -1,6 +1,6 @@
 function CreateTodoButton() {
     return(
-        <button>Crear Tarea</button>
+        <button className="create-to-do-button">Crear Tarea</button>
     );
 }
 

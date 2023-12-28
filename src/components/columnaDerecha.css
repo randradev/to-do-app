@@ -1,0 +1,32 @@
+.container-columna-derecha{
+    /* background-color: #DCEAEF; */
+    padding-bottom: 2em;
+    padding-left: 2em;
+    padding-right: 2em;
+    border-radius: 1em;
+    margin-top: 2em;
+}
+
+.todo-counter{
+    color: #CC7CD6;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2.5em;
+    text-align: center;
+}
+
+.todo-list {
+    list-style-type: none; /* Elimina los puntos de viñeta */
+    padding: 0;
+}
+
+.todo-item {
+    background-color: #FFC849; /* Color de fondo del rectángulo */
+    border: 1px solid #191911; /* Borde del rectángulo */
+    border-radius: 2em; /* Bordes redondeados */
+    margin-bottom: 10px; /* Espacio entre los elementos */
+    padding-left: 1em; /* Espaciado interno del rectángulo */
+    display: flex; 
+    align-items: center;
+    font-family: 'Kanit', sans-serif;
+    font-weight: 300;
+}

@@ -1,9 +1,7 @@
 function TodoItem(props) {
     return (
-        <li>
-           <span>V</span>
+        <li className="todo-item">
            <p>{props.text}</p>
-           <span>X</span>
         </li>
     );
 }

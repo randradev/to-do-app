@@ -1,6 +1,6 @@
 function TodoSearch() {
     return(
-        <input placeholder="Cortar cebolla" />
+        <input className="create-to-do-form-input" placeholder="Busca tus tareas aquí..." />
     );
 }
 
