@@ -1,0 +1,26 @@
+.container-main-title{
+    background-color: #FFC849;
+    margin: 0;
+    padding: 2em;
+    width: 100%;
+    box-sizing: border-box;
+    position: relative;
+    top: 0;
+    color: #191911;
+    font-family: 'Bebas Neue', sans-serif;
+    font-weight: 900;
+    font-size: 1em;
+    text-align: center;
+}
+
+.container-main-title h1 {
+    transform: scale(3);
+}
+
+@media only screen and (max-width: 600px) {
+    /* Estilos específicos para pantallas más pequeñas */
+    .container-main-title {
+      padding: 10px;
+      font-size: 0.5em;
+    }
+  }

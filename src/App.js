@@ -1,28 +1,45 @@
-import logo from './logo.svg';
 import './App.css';
-import { TodoCounter } from './todocounter';
-import { TodoSearch } from './todosearch';
-import { TodoList } from './todolist';
-import { TodoItem } from './todoitem';
-import { CreateTodoButton } from './createtodobutton';
+import React from 'react';
+import { TodoCounter } from './components/columnaDerecha/todocounter';
+import { TodoSearch } from './components/columnaDerecha/todosearch';
+import { TodoList } from './components/columnaDerecha/todolist';
+import { TodoItem } from './components/columnaDerecha/todoitem';
+import { MainBackground } from './components/mainbackground';
+import { FilaArriba } from './components/filaArriba';
+import { ColumnaIzquierda } from './components/columnaIzquierda';
+
+const defaultToDos = [
+  { text: 'Create React App', completed: true},
+  { text: 'git init', completed: true},
+  { text: 'git push origin main', completed: true},
+  { text: 'build app structure', completed: false}
+];
 
 
 function App() {
   return (
-    <div className="App">
+    <>
+
+      <FilaArriba />
+
+      <ColumnaIzquierda />
       
       <TodoCounter completed={16} total={25}/>
       <TodoSearch />
 
       <TodoList>
-        <TodoItem />
-        <TodoItem />
-        <TodoItem />
+        {defaultToDos.map(todo => (
+          <TodoItem
+            key={todo.text}
+            text={todo.text}
+            completed={todo.completed}
+          />
+        ))}
       </TodoList>
 
-      <CreateTodoButton />
+      <MainBackground />
 
-    </div>
+    </>
   );
 }
 
