@@ -30,7 +30,7 @@
     font-weight: 300;
     width: 100%; /* Ajusta el ancho según sea necesario */
     box-sizing: border-box; /* Asegura que el padding y el borde no afecten el ancho total */
-    padding: 8px;
+    padding: 10px;
     border-radius: 2em;
     border: 1px solid #191911;
 
@@ -47,3 +47,6 @@
     padding-right: 50px;
 }
 
+.ilustracion1{
+    margin-top: 3em;
+}

@@ -9,6 +9,7 @@ function ColumnaIzquierda(){
             <CreateToDoTitle />
             <CreateToDoForm />
             <CreateTodoButton />
+            <img src="ilustracion.svg" className="ilustracion1" alt="to-do-illustration"></img>
         </div>
     );
 }
