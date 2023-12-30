@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from 'react';
 import { TodoCounter } from "./columnaDerecha/todocounter";
 import { TodoItem } from "./columnaDerecha/todoitem";
 import { TodoList } from "./columnaDerecha/todolist";
@@ -16,9 +16,9 @@ function ColumnaDerecha() {
         { text: 'build app structure', completed: false}
       ];
     
-    //Estado del buscador  
+    //Estados de To Do
     const [toDos, setToDos] = React.useState(defaultToDos);
-    const [searchValue, setSearchValue] = React.useState('');
+    const [searchValue, setSearchValue] = useState('');
     
     //Contador
     const completedToDos = toDos.filter( toDo => !!toDo.completed).length;
@@ -27,11 +27,31 @@ function ColumnaDerecha() {
     //Buscador
     const searchedToDos = toDos.filter(
         (toDos) => {
-            const toDoText = toDos.text.toLowerCase();
+            // const toDoText = toDos.text.toLowerCase(); PROBAR PARA ELIMINAR
             const searchText = searchValue.toLocaleLowerCase();
             return toDos.text.includes(searchText);
         }
     );
+
+    //Completar - descompletar tareas
+    const completarToDo = (text) => {
+        const newToDos = [...toDos];
+        const toDoIndex = newToDos.findIndex(
+            (toDo) => toDo.text === text
+        );
+        newToDos[toDoIndex].completed = !newToDos[toDoIndex].completed;
+        setToDos(newToDos);
+    };
+    
+    //Eliminar tareas
+    const deleteToDo = (text) => {
+        const newToDos = [...toDos];
+        const toDoIndex = newToDos.findIndex(
+            (toDo) => toDo.text === text
+        );
+        newToDos.splice(toDoIndex, 1);
+        setToDos(newToDos);
+    };
 
     return (
         <div className="container-columna-derecha">
@@ -49,6 +69,8 @@ function ColumnaDerecha() {
                     key={todo.text}
                     text={todo.text}
                     completed={todo.completed}
+                    onComplete={() => completarToDo(todo.text)}
+                    onDelete={() => deleteToDo(todo.text)}
                 />
                 ))}
             </TodoList>
