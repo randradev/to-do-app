@@ -1,6 +1,10 @@
 function CreateTodoButton() {
-    return(
-        <button className="create-to-do-button">Crear Tarea</button>
+    return (
+        <div className="button-container">
+            <button className="create-to-do-button">
+                Crear Tarea <i className="fa-solid fa-arrow-right"></i>
+            </button>
+        </div>
     );
 }
 

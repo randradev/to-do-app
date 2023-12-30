@@ -1,3 +1,5 @@
+/* Container Columna */ 
+
 .container-columna-derecha{
     /* background-color: #DCEAEF; */
     padding-bottom: 2em;
@@ -5,7 +7,10 @@
     padding-right: 2em;
     border-radius: 1em;
     margin-top: 2em;
+    margin-bottom: 4em;
 }
+
+/* Contador */
 
 .todo-counter{
     color: #CC7CD6;
@@ -14,19 +19,111 @@
     text-align: center;
 }
 
+/* Lista */
+
 .todo-list {
     list-style-type: none; /* Elimina los puntos de viñeta */
     padding: 0;
 }
 
+/* Items*/
+
 .todo-item {
-    background-color: #FFC849; /* Color de fondo del rectángulo */
-    border: 1px solid #191911; /* Borde del rectángulo */
-    border-radius: 2em; /* Bordes redondeados */
-    margin-bottom: 10px; /* Espacio entre los elementos */
-    padding-left: 1em; /* Espaciado interno del rectángulo */
-    display: flex; 
+    background-color: #FFC849;
+    border: 1px solid #191911;
+    border-radius: 2em;
+    margin-bottom: 10px;
+    padding-left: 1em;
+    display: flex;
     align-items: center;
     font-family: 'Kanit', sans-serif;
     font-weight: 300;
+    transition: background-color 0.3s, transform 0.3s; /* Agrega una transición suave */
+
+    &:hover {
+        transform: scale(1.01); /* Ajusta según sea necesario */
+    }
+}
+
+
+.icon-container {
+    display: flex;
+    align-items: center;
+    margin-right: 10px; /* Separación entre ícono y texto */
+    cursor: pointer;
+}
+
+.status-icon {
+    font-size: 20px;
+    margin-right: 5px;
+}
+
+.completed {
+    text-decoration: line-through; /* Tachado*/
+}
+
+.delete-icon {
+    font-size: 20px;
+    margin-left: auto;
+    margin-right: 20px; /* Separación entre cruz y extremo derecho del container*/
+    cursor: pointer; /* Cursor se vuelve puntero al posarse sobre el elemento */
+}
+
+/* Barra de búsqueda */
+
+.search-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin-bottom: 2em;
+}
+
+.search-container i {
+    position: absolute;
+    left: 10px;
+    color: #191911;
+}
+
+.to-do-search {
+    font-family: 'Kanit', sans-serif;
+    font-weight: 300;
+    width: 100%;
+    box-sizing: border-box;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 35px;
+    border-radius: 2em;
+    border: 1px solid #191911;
+}
+
+/* Ocultar tareas */
+
+.hide-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer; /* Cursor se vuelve puntero al posarse sobre el elemento */
+    transition: transform 0.3s; /* Agrega una transición suave */
+
+    &:hover {
+        transform: scale(1.02); /* Ajusta según sea necesario */
+    }
+}
+
+.hide-container i {
+    margin-right: 10px;
+}
+
+.hide-container i.fa-eye-slash {
+    color: #DCEAEF;
+}
+
+.hide-container i.fa-eye {
+    color: #DCEAEF;
+}
+
+.hide-text {
+    font-family: 'Kanit', sans-serif;
+    font-weight: 300;
+    color: #DCEAEF;
 }

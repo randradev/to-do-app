@@ -2,6 +2,7 @@ import { TodoCounter } from "./columnaDerecha/todocounter";
 import { TodoItem } from "./columnaDerecha/todoitem";
 import { TodoList } from "./columnaDerecha/todolist";
 import { TodoSearch } from "./columnaDerecha/todosearch";
+import { TodoHide } from "./columnaDerecha/todohide";
 import './columnaDerecha.css';
 
 
@@ -27,6 +28,7 @@ function ColumnaDerecha() {
                 />
                 ))}
             </TodoList>
+            <TodoHide />
         </div>
     );
 }

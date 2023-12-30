@@ -1,3 +1,5 @@
+/* Container Columna */
+
 .container-columna-izquierda{
     background-color: #DCEAEF;
     padding-bottom: 2em;
@@ -5,7 +7,10 @@
     padding-right: 2em;
     border-radius: 1em;
     margin-top: 4.8em;
+    margin-bottom: 4em;
 }
+
+/* Título */
 
 .CreateToDoTitle {
     color: #191911;
@@ -18,34 +23,66 @@
     display: block;
 }
 
+/* Label */
+
 .create-to-do-form-label {
     font-family: 'Kanit', sans-serif;
     font-weight: 300;
     display: block;
-    margin-bottom: 20px; /* Espacio entre el label y el input, ajusta según sea necesario */
+    margin-bottom: 20px; /* Espacio entre el label y el input */
+    text-align: center;
 }
+
+/* Input */
 
 .create-to-do-form-input {
     font-family: 'Kanit', sans-serif;
     font-weight: 300;
-    width: 100%; /* Ajusta el ancho según sea necesario */
-    box-sizing: border-box; /* Asegura que el padding y el borde no afecten el ancho total */
+    width: 100%;
+    box-sizing: border-box;
     padding: 10px;
     border-radius: 2em;
     border: 1px solid #191911;
 
 }
 
-.create-to-do-button{
+/* Botón */
+
+.button-container {
+    max-width: 600px;
+    margin: 0 auto; /* Centra horizontalmente el contenedor principal */
+    display: flex;
+    justify-content: center; /* Para centrar el contenido horizontalmente */
+}
+
+.create-to-do-button {
     font-family: 'Bebas Neue', sans-serif;
     font-size: 1.5em;
     border-radius: 1em;
     border: 1px solid #191911;
     background-color: #FFC849;
-    margin-top: 20px;
+    margin-top: 25px;
     padding-left: 50px;
     padding-right: 50px;
+    padding-top: 0.2em;
+    padding-bottom: 0.2em;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s, transform 0.3s;
+
+    &:hover {
+        background-color: #CC7CD6;
+        color: #191911;
+        transform: scale(1.03);
+    }
+
+    i.fa-arrow-right {
+        margin-left: 8px;
+        color: #000;
+    }
 }
+
+
+/* Ilustración */
 
 .ilustracion1{
     margin-top: 3em;
