@@ -8,6 +8,7 @@
     border-radius: 1em;
     margin-top: 2em;
     margin-bottom: 4em;
+    animation: fadeIn 1s ease-out;
 }
 
 /* Contador */

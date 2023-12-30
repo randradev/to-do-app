@@ -8,6 +8,7 @@
     border-radius: 1em;
     margin-top: 4.8em;
     margin-bottom: 4em;
+    animation: fadeIn 1s ease-out;
 }
 
 /* Título */
