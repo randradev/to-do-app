@@ -1,4 +1,4 @@
-import '../columnaIzquierda.css'
+import '../principalColumnaIzquierda/columnaIzquierda.css'
 
 function CreateToDoTitle() {
     return(

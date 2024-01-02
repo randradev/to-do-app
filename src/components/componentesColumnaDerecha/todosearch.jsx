@@ -1,5 +1,5 @@
 import React from 'react';
-import '../columnaDerecha.css'
+import '../principalColumnaDerecha/columnaDerecha.css'
 
 function TodoSearch({
     searchValue,

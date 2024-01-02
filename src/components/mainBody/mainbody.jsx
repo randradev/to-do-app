@@ -1,5 +1,5 @@
-import { ColumnaDerecha } from "./columnaDerecha";
-import { ColumnaIzquierda } from "./columnaIzquierda";
+import { ColumnaDerecha } from "../principalColumnaDerecha/columnaDerecha";
+import { ColumnaIzquierda } from "../principalColumnaIzquierda/columnaIzquierda";
 import './mainbody.css'
 
 function MainBody() {

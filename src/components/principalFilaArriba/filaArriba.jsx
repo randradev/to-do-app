@@ -1,4 +1,4 @@
-import { Welcome } from "./filaArriba/welcome";
+import { Welcome } from "../componentesFilaArriba/welcome";
 import './filaArriba.css';
 
 function FilaArriba() {

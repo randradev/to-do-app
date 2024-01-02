@@ -1,35 +1,11 @@
 import React, { useState } from 'react';
-import { TodoCounter } from "./columnaDerecha/todocounter";
-import { TodoItem } from "./columnaDerecha/todoitem";
-import { TodoList } from "./columnaDerecha/todolist";
-import { TodoSearch } from "./columnaDerecha/todosearch";
-import { TodoHide } from "./columnaDerecha/todohide";
+import { TodoCounter } from "../componentesColumnaDerecha/todocounter";
+import { TodoItem } from "../componentesColumnaDerecha/todoitem";
+import { TodoList } from "../componentesColumnaDerecha/todolist";
+import { TodoSearch } from "../componentesColumnaDerecha/todosearch";
+import { TodoHide } from "../componentesColumnaDerecha/todohide";
 import './columnaDerecha.css';
-
-//custom hook para el manejo de local storage
-function useLocalStorage(itemName, initalValue) {
-    
-    const localStorageItem = localStorage.getItem(itemName);
-
-    let parsedItem;
-
-    if(!localStorageItem) {
-        localStorage.setItem(itemName, JSON.stringify(initalValue));
-        parsedItem = initalValue;
-    } else {
-        parsedItem = JSON.parse(localStorageItem)
-    }
-
-    const [item, setItem] = useState(parsedItem);
-
-    //Guardar en el local storage
-    const saveItem = (newItem) => {
-        localStorage.setItem(itemName, JSON.stringify(newItem));
-        setItem(newItem);
-    }
-
-    return [item, saveItem]
-}
+import { useLocalStorage } from '../utilidades/useLocalStorage';
 
 function ColumnaDerecha() {
 

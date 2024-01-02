@@ -1,6 +1,7 @@
-import { CreateTodoButton } from "./columnaIzquierda/createtodobutton";
-import { CreateToDoForm } from "./columnaIzquierda/createtodoform";
-import { CreateToDoTitle } from "./columnaIzquierda/createtodotitle";
+import { CreateTodoButton } from "../componentesColumnaIzquierda/createtodobutton";
+import { CreateToDoForm } from "../componentesColumnaIzquierda/createtodoform";
+import { CreateToDoTitle } from "../componentesColumnaIzquierda/createtodotitle";
+import './columnaIzquierda.css';
 
 
 function ColumnaIzquierda(){

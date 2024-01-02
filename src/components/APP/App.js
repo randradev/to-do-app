@@ -1,7 +1,7 @@
 import React from 'react';
 import './app.css'
-import { FilaArriba } from './components/filaArriba';
-import { MainBody } from './components/mainbody';
+import { FilaArriba } from '../principalFilaArriba/filaArriba';
+import { MainBody } from '../mainBody/mainbody';
 
 function App() {
   return (
