@@ -6,18 +6,35 @@ import { TodoSearch } from "./columnaDerecha/todosearch";
 import { TodoHide } from "./columnaDerecha/todohide";
 import './columnaDerecha.css';
 
+//custom hook para el manejo de local storage
+function useLocalStorage(itemName, initalValue) {
+    
+    const localStorageItem = localStorage.getItem(itemName);
+
+    let parsedItem;
+
+    if(!localStorageItem) {
+        localStorage.setItem(itemName, JSON.stringify(initalValue));
+        parsedItem = initalValue;
+    } else {
+        parsedItem = JSON.parse(localStorageItem)
+    }
+
+    const [item, setItem] = useState(parsedItem);
+
+    //Guardar en el local storage
+    const saveItem = (newItem) => {
+        localStorage.setItem(itemName, JSON.stringify(newItem));
+        setItem(newItem);
+    }
+
+    return [item, saveItem]
+}
 
 function ColumnaDerecha() {
-    //Tareas por defecto
-    const defaultToDos = [
-        { text: 'Create React App', completed: true},
-        { text: 'git init', completed: false},
-        { text: 'git push origin main', completed: true},
-        { text: 'build app structure', completed: false}
-      ];
-    
+
     //Estados
-    const [toDos, setToDos] = useState(defaultToDos);
+    const [toDos, saveToDos] = useLocalStorage('TODOS_V1', []);
     const [searchValue, setSearchValue] = useState('');
     const [hidden, setHidden] = useState(false);
     
@@ -40,7 +57,7 @@ function ColumnaDerecha() {
             (toDo) => toDo.text === text
         );
         newToDos[toDoIndex].completed = !newToDos[toDoIndex].completed;
-        setToDos(newToDos);
+        saveToDos(newToDos);
     };
     
     //Eliminar tareas
@@ -50,7 +67,7 @@ function ColumnaDerecha() {
             (toDo) => toDo.text === text
         );
         newToDos.splice(toDoIndex, 1);
-        setToDos(newToDos);
+        saveToDos(newToDos);
     };
 
     //Ocultar o mostrar tareas

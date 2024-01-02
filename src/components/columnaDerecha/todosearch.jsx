@@ -5,8 +5,6 @@ function TodoSearch({
     searchValue,
     setSearchValue
 }) {
-    
-    console.log('Usuario busca To Do de ' + searchValue);
 
     return(
         <div className="search-container">
