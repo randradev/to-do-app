@@ -16,9 +16,10 @@ function ColumnaDerecha() {
         { text: 'build app structure', completed: false}
       ];
     
-    //Estados de To Do
-    const [toDos, setToDos] = React.useState(defaultToDos);
+    //Estados
+    const [toDos, setToDos] = useState(defaultToDos);
     const [searchValue, setSearchValue] = useState('');
+    const [hidden, setHidden] = useState(false);
     
     //Contador
     const completedToDos = toDos.filter( toDo => !!toDo.completed).length;
@@ -27,7 +28,6 @@ function ColumnaDerecha() {
     //Buscador
     const searchedToDos = toDos.filter(
         (toDos) => {
-            // const toDoText = toDos.text.toLowerCase(); PROBAR PARA ELIMINAR
             const searchText = searchValue.toLocaleLowerCase();
             return toDos.text.includes(searchText);
         }
@@ -53,6 +53,11 @@ function ColumnaDerecha() {
         setToDos(newToDos);
     };
 
+    //Ocultar o mostrar tareas
+    const toggleHidden = () => {
+        setHidden(!hidden);
+    };
+
     return (
         <div className="container-columna-derecha">
             <TodoCounter
@@ -63,8 +68,8 @@ function ColumnaDerecha() {
                 searchValue={searchValue}
                 setSearchValue={setSearchValue}
             />
-            <TodoList>
-                {searchedToDos.map(todo => (
+            <TodoList hidden={hidden}>
+            {searchedToDos.map(todo => (
                 <TodoItem
                     key={todo.text}
                     text={todo.text}
@@ -72,9 +77,9 @@ function ColumnaDerecha() {
                     onComplete={() => completarToDo(todo.text)}
                     onDelete={() => deleteToDo(todo.text)}
                 />
-                ))}
+            ))}
             </TodoList>
-            <TodoHide />
+            <TodoHide toggleHidden={toggleHidden} />
         </div>
     );
 }
