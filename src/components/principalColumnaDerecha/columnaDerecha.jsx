@@ -4,13 +4,34 @@ import { TodoItem } from "../componentesColumnaDerecha/todoitem";
 import { TodoList } from "../componentesColumnaDerecha/todolist";
 import { TodoSearch } from "../componentesColumnaDerecha/todosearch";
 import { TodoHide } from "../componentesColumnaDerecha/todohide";
+import { TodosLoading } from "../componentesColumnaDerecha/todosloading";
+import { TodosError } from "../componentesColumnaDerecha/todoserror";
+import { TodosEmpty } from "../componentesColumnaDerecha/todosempty";
 import './columnaDerecha.css';
 import { useLocalStorage } from '../utilidades/useLocalStorage';
 
+// localStorage.removeItem('TODOS_V1');
+
+// const defaultToDos = [
+//     {text: 'Lavar la loza', completed: true},
+//     {text: 'Lavar la ropa', completed: false},
+//     {text: 'Almorzar', completed: true},
+//     {text: 'Programar', completed: false},
+//     {text: 'Isotretinoína', completed: true},
+// ]
+
+// localStorage.setItem('TODOS_V1', JSON.stringify(defaultToDos));
+
 function ColumnaDerecha() {
 
+//LÓGICA
+
     //Estados
-    const [toDos, saveToDos] = useLocalStorage('TODOS_V1', []);
+    const {item: toDos,
+        saveItem: saveToDos,
+        loading,
+        error,
+    } = useLocalStorage('TODOS_V1', []);
     const [searchValue, setSearchValue] = useState('');
     const [hidden, setHidden] = useState(false);
     
@@ -51,6 +72,9 @@ function ColumnaDerecha() {
         setHidden(!hidden);
     };
 
+
+//UI
+
     return (
         <div className="container-columna-derecha">
             <TodoCounter
@@ -62,6 +86,10 @@ function ColumnaDerecha() {
                 setSearchValue={setSearchValue}
             />
             <TodoList hidden={hidden}>
+            {loading && <TodosLoading />}
+            {error && <TodosError />}
+            {(!loading && searchedToDos.length === 0) && <TodosEmpty />}
+            
             {searchedToDos.map(todo => (
                 <TodoItem
                     key={todo.text}

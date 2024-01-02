@@ -3,7 +3,6 @@ import { CreateToDoForm } from "../componentesColumnaIzquierda/createtodoform";
 import { CreateToDoTitle } from "../componentesColumnaIzquierda/createtodotitle";
 import './columnaIzquierda.css';
 
-
 function ColumnaIzquierda(){
     return(
         <div className="container-columna-izquierda">

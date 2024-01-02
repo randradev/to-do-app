@@ -1,20 +1,38 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 //custom hook para el manejo de local storage
 function useLocalStorage(itemName, initalValue) {
     
-    const localStorageItem = localStorage.getItem(itemName);
+    const [item, setItem] = useState(initalValue);
 
-    let parsedItem;
+    //Estado de carga
+    const [loading, setLoading] = useState(true);
 
-    if(!localStorageItem) {
-        localStorage.setItem(itemName, JSON.stringify(initalValue));
-        parsedItem = initalValue;
-    } else {
-        parsedItem = JSON.parse(localStorageItem)
-    }
+    //Estado de error
+    const [error, setError] = useState(false);
 
-    const [item, setItem] = useState(parsedItem);
+    useEffect(() => {
+        setTimeout(() => {
+            try {
+                const localStorageItem = localStorage.getItem(itemName);
+    
+                let parsedItem;
+    
+                if(!localStorageItem) {
+                    localStorage.setItem(itemName, JSON.stringify(initalValue));
+                    parsedItem = initalValue;
+                } else {
+                    parsedItem = JSON.parse(localStorageItem)
+                    setItem(parsedItem);
+                }
+                setLoading(false);
+    
+            } catch(error) {
+                setLoading(false);
+                setError(true);
+            }
+        }, 5000);
+    });
 
     //Guardar en el local storage
     const saveItem = (newItem) => {
@@ -22,7 +40,10 @@ function useLocalStorage(itemName, initalValue) {
         setItem(newItem);
     }
 
-    return [item, saveItem]
+    return {item,
+        saveItem,
+        loading,
+        error,}
 }
 
 export { useLocalStorage }

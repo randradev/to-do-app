@@ -128,3 +128,94 @@
     font-weight: 300;
     color: #DCEAEF;
 }
+
+/* Loading */
+
+.loading-container {
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    margin: 2em;
+  }
+  
+  .loading-text {
+    /* display: flex; */
+    /* position: relative; */
+    color:#FFC849;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2em;
+    text-align: center;
+    align-items: center;
+    justify-items: center;
+  }
+  
+  .loading-icon {
+    display: inline-block;
+    width: 5em;
+    height: 5em;
+    border: 1.8em solid #DCEAEF;
+    border-top: 1.8em solid #FFC849;
+    border-radius: 50%;
+    animation: spin 3s ease-in-out infinite;
+    margin-top: 2em;
+  }
+  
+  /* Define la animación de giro (spin) */
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  
+  /* Aplica animación a cada carácter */
+  .loading-text span {
+    display: inline-block;
+    opacity: 1;
+    animation: moveUpDown 4s ease-in-out infinite;
+  }
+  
+  /* Ajusta la animación de desplazamiento hacia arriba y abajo */
+  @keyframes moveUpDown {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-5px);
+    }
+  }
+  
+  /* Aplica un desfase a cada carácter */
+  .loading-text span:nth-child(1) {
+    animation-delay: -0.5s;
+  }
+  .loading-text span:nth-child(2) {
+    animation-delay: -0.9s;
+  }
+  .loading-text span:nth-child(3) {
+    animation-delay: -1.3s;
+  }
+  .loading-text span:nth-child(4) {
+    animation-delay: -1.7s;
+  }
+  .loading-text span:nth-child(5) {
+    animation-delay: -2.1s;
+  }
+  .loading-text span:nth-child(6) {
+    animation-delay: -2.5s;
+  }
+  .loading-text span:nth-child(7) {
+    animation-delay: -2.9s;
+  }
+  .loading-text span:nth-child(8) {
+    animation-delay: -3.3s;
+  }
+  .loading-text span:nth-child(9) {
+    animation-delay: -3.7s;
+  }
+  .loading-text span:nth-child(10) {
+    animation-delay: -4.1s;
+  }
+  .loading-text span:nth-child(11) {
+    animation-delay: -4.5s;
+  }
+  /* Añade más reglas según la longitud de tu texto */
+  
