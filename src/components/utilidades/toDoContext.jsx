@@ -18,13 +18,13 @@ function ToDoProvider({ children }) {
     const completedToDos = toDos.filter( toDo => !!toDo.completed).length;
     const totalToDos = toDos.length;
 
-    //Buscador
-    const searchedToDos = toDos.filter(
-        (toDos) => {
-            const searchText = searchValue.toLocaleLowerCase();
-            return toDos.text.includes(searchText);
-        }
-    );
+    // Buscador
+    const searchedToDos = Array.isArray(toDos)
+        ? toDos.filter((toDo) => {
+            const searchText = searchValue.toLowerCase();
+            return toDo && toDo.text && toDo.text.toLowerCase().includes(searchText);
+        })
+        : [];
 
     //Completar - descompletar tareas
     const completarToDo = (text) => {
@@ -50,6 +50,18 @@ function ToDoProvider({ children }) {
     const toggleHidden = () => {
         setHidden(!hidden);
     };
+
+    //Agregar tarea
+    const addToDo = (text) => {
+        if (text.trim() !== "") {
+            const newToDos = [...toDos];
+            newToDos.push({
+                text,
+                completed: false,
+            });
+            saveToDos(newToDos);
+        }
+    };
     
     return(
         <ToDoContext.Provider value={{
@@ -65,6 +77,7 @@ function ToDoProvider({ children }) {
             hidden,
             setHidden,
             toggleHidden,
+            addToDo,
         }}>
             {children}
         </ToDoContext.Provider>

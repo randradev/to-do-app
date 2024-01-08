@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext } from 'react';
 import { TodoCounter } from "../componentesColumnaDerecha/todocounter";
 import { TodoItem } from "../componentesColumnaDerecha/todoitem";
 import { TodoList } from "../componentesColumnaDerecha/todolist";
@@ -8,7 +8,7 @@ import { TodosLoading } from "../componentesColumnaDerecha/todosloading";
 import { TodosError } from "../componentesColumnaDerecha/todoserror";
 import { TodosEmpty } from "../componentesColumnaDerecha/todosempty";
 import './columnaDerecha.css';
-import { ToDoContext,ToDoProvider } from '../utilidades/toDoContext';
+import { ToDoContext } from '../utilidades/toDoContext';
 
 function ColumnaDerecha() {
 
