@@ -18,7 +18,7 @@
   color: #191911;
   font-family: 'Bebas Neue', sans-serif;
   font-weight: 900;
-  font-size: 3em; /* Ajusta el tamaño según tus preferencias */
+
   text-align: center;
   animation: fadeIn 1s ease-out; /* Agrega la animación aquí */
 }
@@ -27,6 +27,7 @@
   display: flex;
   align-items: center; /* Centra verticalmente */
   justify-content: center; /* Centra horizontalmente */
+  font-size: 2em;
 }
 
 @media only screen and (max-width: 600px) {

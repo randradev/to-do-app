@@ -13,13 +13,13 @@ function useLocalStorage(itemName, initialValue) {
             let parsedItem;
 
             if (!localStorageItem) {
+                
                 localStorage.setItem(itemName, JSON.stringify(initialValue));
                 parsedItem = initialValue;
             } else {
                 parsedItem = JSON.parse(localStorageItem);
                 setItem(parsedItem);
             }
-
             setLoading(false);
         } catch (error) {
             setLoading(false);

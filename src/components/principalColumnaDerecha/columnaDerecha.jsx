@@ -45,7 +45,7 @@ function ColumnaDerecha() {
             </TodoList>
 
 
-            <TodoHide toggleHidden={toggleHidden} />
+            <TodoHide toggleHidden={toggleHidden} hidden={hidden} />
         </div>
     );
 }
