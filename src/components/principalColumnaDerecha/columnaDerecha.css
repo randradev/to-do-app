@@ -217,5 +217,31 @@
   .loading-text span:nth-child(11) {
     animation-delay: -4.5s;
   }
-  /* Añade más reglas según la longitud de tu texto */
-  
+
+
+/* To Dos Empty */
+
+.TodosEmpty-titulo {
+  color: #FFC849;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 2em;
+  text-align: center;
+  animation: pulse 0.5s infinite alternate ease-in-out; /* Duración de 2 segundos, bucle infinito, alternando entre escalado y desescaldo, easing ease-in-out */
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1); /* Escala original al comienzo */
+  }
+  100% {
+    transform: scale(1.1); /* Escala 10% más grande al final */
+  }
+}
+
+.TodosEmpty-parrafo{
+    font-family: 'Kanit', sans-serif;
+    font-weight: 300;
+    color: #DCEAEF;
+    display: block;
+    text-align: center;
+}

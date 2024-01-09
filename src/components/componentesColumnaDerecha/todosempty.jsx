@@ -3,7 +3,10 @@ import '../principalColumnaDerecha/columnaDerecha.css';
 
 function TodosEmpty (){
     return (
-        <p>Crea tu primer To Do</p>
+        <div className="TodosEmpty-container">
+            <p className="TodosEmpty-parrafo">¡El mejor momento para empezar es ahora!</p>
+            <h3 className="TodosEmpty-titulo">Crea tu primera Tarea</h3>
+        </div>
     );
 }
 
