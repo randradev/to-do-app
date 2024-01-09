@@ -1,21 +1,15 @@
-import { React, useContext } from "react";
-import { CreateTodoButton } from "../componentesColumnaIzquierda/createtodobutton";
+import { React } from "react";
 import { CreateToDoForm } from "../componentesColumnaIzquierda/createtodoform";
 import { CreateToDoTitle } from "../componentesColumnaIzquierda/createtodotitle";
-import { ToDoContext } from "../utilidades/toDoContext";
 import './columnaIzquierda.css';
 
 function ColumnaIzquierda(){
-    const {
-        addToDo
-    } = useContext(ToDoContext);
 
     return(
         <div className="container-columna-izquierda">
             <CreateToDoTitle />
             <CreateToDoForm />
-            {/* <CreateTodoButton /> */}
-            <img src="ilustracion.svg" className="ilustracion1" alt="to-do-illustration"></img>
+            <img src="ilustracion-to-do-app.png" className="ilustracion1" alt="to-do-app-illustration" ></img>
         </div>
     );
 }

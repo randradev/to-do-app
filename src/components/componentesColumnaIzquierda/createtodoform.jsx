@@ -1,13 +1,19 @@
-// CreateToDoForm.jsx
-import React, { useState } from "react";
-import { CreateTodoButton } from "./createtodobutton"; // Importa el componente CreateTodoButton
+import React, { useState, useContext } from "react";
+import { CreateTodoButton } from "./createtodobutton";
+import { ToDoContext } from "../utilidades/toDoContext";
 
-function CreateToDoForm({ onAddToDo }) {
+function CreateToDoForm() {
     const [newToDoValue, setNewToDoValue] = useState('');
+    const { addToDo } = useContext(ToDoContext);
 
     const onChange = (event) => {
         setNewToDoValue(event.target.value);
     }
+
+    const handleAddToDo = () => {
+        addToDo(newToDoValue);
+        setNewToDoValue('');
+      }
 
     return (
         <form>
@@ -20,8 +26,7 @@ function CreateToDoForm({ onAddToDo }) {
                     onChange={onChange}
                 />
             </div>
-            {/* Pasa la función `onAddToDo` y el estado `newToDoValue` */}
-            <CreateTodoButton newToDoValue={newToDoValue} onAddToDo={() => onAddToDo(newToDoValue)} />
+            <CreateTodoButton handleAddToDo={handleAddToDo} />
         </form>
     );
 }

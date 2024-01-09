@@ -55,11 +55,18 @@ function ToDoProvider({ children }) {
     const addToDo = (text) => {
         if (text.trim() !== "") {
             const newToDos = [...toDos];
-            newToDos.push({
-                text,
-                completed: false,
-            });
-            saveToDos(newToDos);
+            const isTaskExist = newToDos.some((task) => task.text === text);
+    
+            if (!isTaskExist) {
+                newToDos.push({
+                    text,
+                    completed: false,
+                });
+                saveToDos(newToDos);
+            } else {
+                // Manejar el caso en que la tarea ya existe
+                console.log("La tarea ya existe");
+            }
         }
     };
     

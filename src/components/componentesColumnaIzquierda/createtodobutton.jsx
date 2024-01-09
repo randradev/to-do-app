@@ -1,16 +1,11 @@
-import React, { useContext } from "react";
-import { ToDoContext } from '../utilidades/toDoContext';
+import React from "react";
 
-function CreateTodoButton( { newToDoValue }) {
-
-    const {
-        addToDo
-    } = useContext(ToDoContext);
+function CreateTodoButton( { handleAddToDo }) {
 
     //Control lógica de OnClick
     const onClick = (event) => {
         event.preventDefault();
-        addToDo(newToDoValue);;
+        handleAddToDo();
     }
 
     return (
