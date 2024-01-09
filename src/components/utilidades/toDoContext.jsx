@@ -13,7 +13,17 @@ function ToDoProvider({ children }) {
     } = useLocalStorage('TODOS_V1', []);
     const [searchValue, setSearchValue] = useState('');
     const [hidden, setHidden] = useState(false);
-    
+    const [errorMessage, setErrorMessage] = useState(null);
+
+    //Manejo de errores
+    const setTodoError = (message) => {
+        setErrorMessage(message);
+      };
+      
+    const clearTodoError = () => {
+        setErrorMessage(null);
+    };
+
     //Contador
     const completedToDos = toDos.filter( toDo => !!toDo.completed).length;
     const totalToDos = toDos.length;
@@ -54,21 +64,27 @@ function ToDoProvider({ children }) {
     //Agregar tarea
     const addToDo = (text) => {
         if (text.trim() !== "") {
-            const newToDos = [...toDos];
-            const isTaskExist = newToDos.some((task) => task.text === text);
-    
-            if (!isTaskExist) {
-                newToDos.push({
-                    text,
-                    completed: false,
-                });
-                saveToDos(newToDos);
-            } else {
-                // Manejar el caso en que la tarea ya existe
-                console.log("La tarea ya existe");
+            try {
+                const newToDos = [...toDos];
+                const isTaskExist = newToDos.some((task) => task.text.toLowerCase() === text.toLowerCase());
+        
+                if (!isTaskExist) {
+                    newToDos.push({
+                        text,
+                        completed: false,
+                    });
+                    saveToDos(newToDos);
+                } else {
+                    // Establecer mensaje de error si la tarea ya existe
+                    setTodoError("La tarea ya existe. Por favor, elige un nombre único.");
+                }
+            } catch (error) {
+                console.error("Error al agregar tarea:", error);
+                setTodoError("Ocurrió un error al agregar la tarea. Por favor, inténtalo de nuevo.");
             }
         }
     };
+     
     
     return(
         <ToDoContext.Provider value={{
@@ -85,6 +101,9 @@ function ToDoProvider({ children }) {
             setHidden,
             toggleHidden,
             addToDo,
+            errorMessage,
+            setTodoError,
+            clearTodoError,
         }}>
             {children}
         </ToDoContext.Provider>

@@ -1,0 +1,83 @@
+.errorduplicado-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  .errorduplicado-contenido {
+    background-color: #DCEAEF;
+    padding-bottom: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 15px;
+    text-align: center;
+  }
+  
+.errorduplicado-title{
+    color: #191911;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 3em;
+    text-align: center;
+    margin-top:20px;
+    margin-bottom: 0;
+}
+
+  .errorduplicado-message {
+    font-family: 'Kanit', sans-serif;
+    font-weight: 300;
+    display: block;
+    text-align: center;
+  }
+  
+  .errorduplicado-closebutton {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.5em;
+    border-radius: 1em;
+    border: 1px solid #191911;
+    background-color: #FFC849;
+    margin-top: 25px;
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-top: 0.2em;
+    padding-bottom: 0.2em;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s, transform 0.3s;
+
+    &:hover {
+        background-color: #CC7CD6;
+        color: #191911;
+        transform: scale(1.03);
+    }
+
+    i.fa-arrow-right {
+        margin-left: 8px;
+        color: #000;
+    }
+  }
+  
+  /* Agrega estas clases a tu archivo CSS */
+.popup-enter {
+    opacity: 0;
+  }
+  
+  .popup-enter-active {
+    opacity: 1;
+    transition: opacity 300ms;
+  }
+  
+  .popup-exit {
+    opacity: 1;
+  }
+  
+  .popup-exit-active {
+    opacity: 0;
+    transition: opacity 300ms;
+  }
+  
