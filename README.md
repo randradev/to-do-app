@@ -1,3 +1,7 @@
+![Esta captura de pantalla muestra la interfaz principal de la aplicación, donde los usuarios pueden gestionar sus tareas de manera eficiente. Se destaca la funcionalidad de marcar tareas como completadas o pendientes, así como el filtro dinámico y la opción de mostrar u ocultar tareas completadas para una experiencia de usuario más personalizada.
+](https://drive.google.com/uc?id=1Z8cMo8a2SBsAWQ58JFI0Em8cApZ55bDz)
+
+
 # To-Do App
 
 Bienvenid@ a mi To-Do App, una aplicación simple y eficiente para gestionar tus tareas diarias. Esta aplicación está diseñada para brindarte una experiencia intuitiva y rápida, permitiéndote organizar tus actividades de manera efectiva.
