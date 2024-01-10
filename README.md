@@ -21,7 +21,7 @@ Bienvenid@ a mi To-Do App, una aplicación simple y eficiente para gestionar tus
 
 - **Frontend:** Desarrollado con ReactJS.
  
--**Almacenamiento de Datos:** Utiliza localStorage.
+- **Almacenamiento de Datos:** Utiliza localStorage.
 
 # Cómo contribuir
 
